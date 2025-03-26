@@ -1,0 +1,22 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: crossplane-install
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: "https://charts.crossplane.io/stable"
+    chart: "crossplane"
+    targetRevision: "1.19.0"
+    helm:
+      releaseName: crossplane
+      values: |
+        # (Optional) Add any custom Helm values you want here
+  destination:
+    server: "https://kubernetes.default.svc"   # in-cluster
+    namespace: "crossplane-system"            # where Crossplane typically goes
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
