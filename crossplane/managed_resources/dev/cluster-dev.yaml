@@ -8,7 +8,6 @@ metadata:
   name: cluster-dev
 spec:
   forProvider:
-    name: cluster-dev
     location: europe-west1
     initialNodeCount: 1
     removeDefaultNodePool: true
