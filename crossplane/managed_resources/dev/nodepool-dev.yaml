@@ -9,7 +9,7 @@ metadata:
 spec:
   forProvider:
     cluster: cluster-dev
-    location: us-central1
+    location: europe-west1
     nodeCount: 1
     autoscaling:
       minNodeCount: 1
