@@ -9,7 +9,8 @@ metadata:
 spec:
   forProvider:
     cluster: cluster-dev
-    location: us-central1        # Must match the cluster location; update as needed
+    location: us-central1
+    initialNodeCount: 1
     nodeCount: 1
     autoscaling:
       minNodeCount: 1
