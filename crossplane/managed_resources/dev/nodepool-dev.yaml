@@ -10,7 +10,6 @@ spec:
   forProvider:
     cluster: cluster-dev
     location: us-central1
-    initialNodeCount: 1
     nodeCount: 1
     autoscaling:
       minNodeCount: 1
