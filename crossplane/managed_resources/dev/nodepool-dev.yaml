@@ -3,6 +3,7 @@ kind: NodePool
 metadata:
   annotations:
     meta.upbound.io/example-id: container/v1beta2/nodepool
+    argocd.argoproj.io/sync-wave: "2"
   labels:
     testing.upbound.io/example-name: nodepool
   name: nodepool-dev
