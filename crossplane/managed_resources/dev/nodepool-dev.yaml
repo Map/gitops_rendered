@@ -19,7 +19,7 @@ spec:
       preemptible: false
       oauthScopes:
         - https://www.googleapis.com/auth/cloud-platform
-      nodeLocations:
-         - europe-west1-b
+    nodeLocations:
+       - europe-west1-b
   providerConfigRef:
     name: gcp-provider-config
