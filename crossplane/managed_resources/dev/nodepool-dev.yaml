@@ -1,0 +1,26 @@
+apiVersion: container.gcp.upbound.io/v1beta2
+kind: NodePool
+metadata:
+  annotations:
+    meta.upbound.io/example-id: container/v1beta2/nodepool
+    argocd.argoproj.io/sync-wave: "2"
+  labels:
+    testing.upbound.io/example-name: nodepool
+  name: nodepool-dev
+spec:
+  forProvider:
+    cluster: cluster-dev
+    location: europe-west1
+    nodeCount: 1
+    autoscaling:
+      minNodeCount: 1
+      maxNodeCount: 1
+    nodeConfig:
+      machineType: n1-standard-1
+      preemptible: false
+      oauthScopes:
+        - https://www.googleapis.com/auth/cloud-platform
+    nodeLocations:
+       - europe-west1-b
+  providerConfigRef:
+    name: gcp-provider-config
