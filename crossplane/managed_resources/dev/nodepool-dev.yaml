@@ -1,11 +1,11 @@
 apiVersion: container.gcp.upbound.io/v1beta2
-kind: Cluster
+kind: NodePool
 metadata:
   annotations:
     meta.upbound.io/example-id: container/v1beta2/nodepool
   labels:
     testing.upbound.io/example-name: nodepool
-  name: nodepool
+  name: nodepool-dev
 spec:
   forProvider:
     cluster: cluster-dev
