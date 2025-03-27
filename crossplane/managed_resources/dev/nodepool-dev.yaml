@@ -20,6 +20,6 @@ spec:
       oauthScopes:
         - https://www.googleapis.com/auth/cloud-platform
       nodeLocations:
-         - us-central1-a
+         - europe-west1-b
   providerConfigRef:
     name: gcp-provider-config
