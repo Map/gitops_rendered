@@ -10,7 +10,7 @@ spec:
   source:
     repoURL: 'https://github.com/Map/gitops_rendered'
     targetRevision: main
-    path: infra/crossplane-providers
+    path: infra/crossplane-provider-configs
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: default
