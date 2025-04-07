@@ -10,9 +10,9 @@ configMapGenerator:
       usernameSecret:
         key: git_username
         name: autopilot-secret
-  - configs.cm.application.resourceTrackingMethod=annotation
+  - application.resourceTrackingMethod=annotation
   - |
-    configs.cm.resource.customizations: |
+    resource.customizations: |
           "*.upbound.io/*":
             health.lua: |
               health_status = {
