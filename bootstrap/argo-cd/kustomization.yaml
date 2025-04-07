@@ -8,6 +8,13 @@ configMapGenerator:
       kinds:
         - ProviderConfigUsage
   - |
+    resource.customizations= "*.upbound.io/*":
+        health.lua: |
+          health_status = {
+            status = "Progressing",
+            message = "Provisioning ..."
+          }
+  - |
     repository.credentials=- passwordSecret:
         key: git_token
         name: autopilot-secret
