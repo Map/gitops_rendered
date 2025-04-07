@@ -2,6 +2,12 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 configMapGenerator:
 - behavior: merge
   literals:
+  - | 
+    resource.exclusions: |
+    - apiGroups:
+        - "*"
+      kinds:
+        - ProviderConfigUsage
   - |
     repository.credentials=- passwordSecret:
         key: git_token
