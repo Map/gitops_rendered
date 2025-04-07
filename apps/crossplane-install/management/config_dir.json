@@ -1,0 +1,13 @@
+{
+  "appName": "crossplane-install",
+  "userGivenName": "crossplane-install",
+  "destNamespace": "default",
+  "destServer": "https://kubernetes.default.svc",
+  "srcPath": "crossplane-install",
+  "srcRepoURL": "https://github.com/Map/gitops_rendered.git",
+  "srcTargetRevision": "",
+  "labels": null,
+  "annotations": null,
+  "exclude": "",
+  "include": ""
+}
