@@ -1,4 +1,3 @@
-# kustomization.yaml
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 namespace: argocd
@@ -10,30 +9,40 @@ configMapGenerator:
   - name: argocd-cm
     behavior: merge
     literals:
-      # Merge in autopilot repository credentials
-      - |
-        repository.credentials=- passwordSecret:
-            key: git_token
-            name: autopilot-secret
-          url: https://github.com/
-          usernameSecret:
-            key: git_username
-            name: autopilot-secret
+      ###################################################################
+      # 1) repository.credentials must be valid YAML array. For example:
+      ###################################################################
+      - |-
+        repository.credentials=|-
+          - url: https://github.com/
+            usernameSecret:
+              name: autopilot-secret
+              key: git_username
+            passwordSecret:
+              name: autopilot-secret
+              key: git_token
 
-      # Resource tracking method
+      ###################################################################
+      # 2) Simple single‐line key-value:
+      ###################################################################
       - application.resourceTrackingMethod=annotation
 
-      # Properly quoted resource exclusions
+      ###################################################################
+      # 3) resource.exclusions must be valid YAML array:
+      ###################################################################
       - |-
-        resource.exclusions=|
+        resource.exclusions=|-
           - apiGroups:
               - "*"
             kinds:
               - ProviderConfigUsage
 
-      # Resource customizations (Crossplane + Upbound health checks)
+      ###################################################################
+      # 4) resource.customizations must be a valid YAML map of
+      #    “group/Kind pattern” -> ResourceOverride
+      ###################################################################
       - |-
-        resource.customizations=|
+        resource.customizations=|-
           "*.upbound.io/*":
             health.lua: |
               health_status = {
@@ -146,12 +155,3 @@ configMapGenerator:
                 end
 
                 if contains({"Ready", "Healthy", "Offered", "Established"}, condition.type) then
-                  if condition.status == "True" then
-                    health_status.status = "Healthy"
-                    health_status.message = "Resource is up-to-date."
-                    return health_status
-                  end
-                end
-              end
-
-              return health_status
