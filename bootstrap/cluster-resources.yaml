@@ -25,8 +25,8 @@ spec:
     metadata:
       labels:
         app.kubernetes.io/managed-by: argocd-autopilot
-        app.kubernetes.io/name: cluster-resources-{{ replace .name "_" "-" }}
-      name: cluster-resources-{{ replace .name "_" "-" }}
+        app.kubernetes.io/name: cluster-resources-{{name}}
+      name: cluster-resources-{{name}}
       namespace: argocd
     spec:
       destination:
@@ -38,7 +38,7 @@ spec:
         kind: Application
       project: default
       source:
-        path: bootstrap/cluster-resources/{{ replace .name "_" "-" }}
+        path: bootstrap/cluster-resources/{{name}}
         repoURL: https://github.com/Map/gitops_rendered.git
       syncPolicy:
         automated:
