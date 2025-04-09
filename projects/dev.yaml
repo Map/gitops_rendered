@@ -58,11 +58,11 @@ spec:
       labels:
         app.kubernetes.io/managed-by: argocd-autopilot
         app.kubernetes.io/name: '{{ appName }}'
-      name: dev-{{ userGivenName }}
+      name: '{{index .path.segments 1}}-{{index .path.segments 3}}'
       namespace: argocd
     spec:
       destination:
-        namespace: '{{ destNamespace }}'
+        namespace: 'default'
         server: 'https://104.199.36.164'
       ignoreDifferences:
       - group: argoproj.io
@@ -71,9 +71,9 @@ spec:
         kind: Application
       project: dev
       source:
-        path: '{{ srcPath }}'
-        repoURL: '{{ srcRepoURL }}'
-        targetRevision: '{{ srcTargetRevision }}'
+        path: '{{.path.path}}'
+        repoURL: 'https://github.com/Map/gitops_rendered.git'
+        targetRevision: 'HEAD'
       syncPolicy:
         automated:
           allowEmpty: true
