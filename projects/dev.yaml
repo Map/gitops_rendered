@@ -39,20 +39,7 @@ spec:
         - path: apps/**/envs/dev
       repoURL: https://github.com/Map/gitops_rendered.git
       requeueAfterSeconds: 20
-      revision: ""
-      template:
-        metadata: {}
-        spec:
-          destination: {}
-          project: ""
-          source:
-            directory:
-              exclude: '{{ exclude }}'
-              include: '{{ include }}'
-              jsonnet: {}
-              recurse: true
-            repoURL: ""
-  syncPolicy: {}
+      revision: "HEAD"
   template:
     metadata:
       labels:
