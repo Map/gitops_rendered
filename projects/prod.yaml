@@ -74,7 +74,7 @@ spec:
     spec:
       destination:
         namespace: '{{ destNamespace }}'
-        server: 'https://35.205.52.239'
+        server: 'https://34.79.232.113'
       ignoreDifferences:
       - group: argoproj.io
         jsonPointers:
