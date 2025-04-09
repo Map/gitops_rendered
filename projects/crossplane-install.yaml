@@ -4,7 +4,7 @@ metadata:
   name: crossplane-install
   namespace: argocd
   annotations:
-    argocd.argoproj.io/sync-wave: "8"
+    argocd.argoproj.io/sync-wave: "-1"
 spec:
   project: default
   source:
