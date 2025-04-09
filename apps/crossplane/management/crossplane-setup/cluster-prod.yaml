@@ -6,7 +6,7 @@ metadata:
     argocd.argoproj.io/sync-wave: "3"
   labels:
     testing.upbound.io/example-name: cluster-prod
-  name: cluster-dev
+  name: cluster-prod
 spec:
   forProvider:
     location: europe-west1
@@ -26,7 +26,7 @@ metadata:
     argocd.argoproj.io/sync-wave: "2"
   labels:
     testing.upbound.io/example-name: nodepool
-  name: nodepool-dev
+  name: nodepool-prod
 spec:
   forProvider:
     cluster: cluster-prod
