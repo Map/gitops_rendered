@@ -2,7 +2,7 @@
   "appName": "nginx-app",
   "userGivenName": "nginx-app",
   "destNamespace": "default",
-  "srcPath": "apps/nginx/prod",
+  "srcPath": "apps/nginx/envs/prod",
   "srcRepoURL": "https://github.com/Map/gitops_rendered.git",
   "srcTargetRevision": "",
   "labels": null,
