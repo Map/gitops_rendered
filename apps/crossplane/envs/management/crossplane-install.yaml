@@ -16,7 +16,7 @@ spec:
         # (Optional) Add any custom Helm values you want here
   destination:
     server: "https://kubernetes.default.svc"   # in-cluster
-    namespace: "crossplane-system"            # where Crossplane typically goes
+    namespace: "default"            # where Crossplane typically goes
   syncPolicy:
     automated:
       prune: true
