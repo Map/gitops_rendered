@@ -1,0 +1,12 @@
+{
+  "appName": "nginx-app",
+  "userGivenName": "nginx-app",
+  "destNamespace": "default",
+  "srcPath": "apps/nginx/prod",
+  "srcRepoURL": "https://github.com/Map/gitops_rendered.git",
+  "srcTargetRevision": "",
+  "labels": null,
+  "annotations": null,
+  "exclude": "",
+  "include": ""
+}
