@@ -57,7 +57,6 @@ spec:
     metadata:
       labels:
         app.kubernetes.io/managed-by: argocd-autopilot
-        app.kubernetes.io/name: '{{ appName }}'
       name: '{{index .path.segments 1}}-{{index .path.segments 3}}'
       namespace: argocd
     spec:
