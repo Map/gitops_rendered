@@ -35,19 +35,8 @@ metadata:
 spec:
   generators:
   - git:
-      files:
-      - path: apps/**/management/config.json
-      repoURL: https://github.com/Map/gitops_rendered.git
-      requeueAfterSeconds: 20
-      revision: ""
-      template:
-        metadata: {}
-        spec:
-          destination: {}
-          project: ""
-  - git:
-      files:
-      - path: apps/**/management/config_dir.json
+      directories:
+        - path: apps/**/envs/management
       repoURL: https://github.com/Map/gitops_rendered.git
       requeueAfterSeconds: 20
       revision: ""
