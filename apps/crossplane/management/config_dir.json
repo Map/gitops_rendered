@@ -2,7 +2,7 @@
   "appName": "crossplane-install",
   "userGivenName": "crossplane-install",
   "destNamespace": "default",
-  "srcPath": "apps/management/crossplane-setup",
+  "srcPath": "apps/crossplane/management/crossplane-setup",
   "srcRepoURL": "https://github.com/Map/gitops_rendered.git",
   "srcTargetRevision": "",
   "labels": null,
