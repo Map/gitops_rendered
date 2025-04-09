@@ -28,7 +28,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
   annotations:
-    argocd.argoproj.io/sync-wave: "0"
+    argocd.argoproj.io/sync-wave: "1"
   creationTimestamp: null
   name: dev
   namespace: argocd
@@ -74,7 +74,7 @@ spec:
     spec:
       destination:
         namespace: '{{ destNamespace }}'
-        server: '{{ destServer }}'
+        server: 'https://35.205.52.239'
       ignoreDifferences:
       - group: argoproj.io
         jsonPointers:

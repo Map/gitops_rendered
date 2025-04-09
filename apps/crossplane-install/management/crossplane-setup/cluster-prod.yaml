@@ -1,4 +1,24 @@
 apiVersion: container.gcp.upbound.io/v1beta2
+kind: Cluster
+metadata:
+  annotations:
+    meta.upbound.io/example-id: container/v1beta2/cluster
+    argocd.argoproj.io/sync-wave: "3"
+  labels:
+    testing.upbound.io/example-name: cluster-prod
+  name: cluster-dev
+spec:
+  forProvider:
+    location: europe-west1
+    initialNodeCount: 1
+    removeDefaultNodePool: true
+    deletionProtection: false
+  providerConfigRef:
+    name: gcp-provider-config
+
+---
+
+apiVersion: container.gcp.upbound.io/v1beta2
 kind: NodePool
 metadata:
   annotations:
@@ -9,7 +29,7 @@ metadata:
   name: nodepool-dev
 spec:
   forProvider:
-    cluster: cluster-dev
+    cluster: cluster-prod
     location: europe-west1
     nodeCount: 1
     autoscaling:
@@ -21,6 +41,6 @@ spec:
       oauthScopes:
         - https://www.googleapis.com/auth/cloud-platform
     nodeLocations:
-       - europe-west1-b
+      - europe-west1-b
   providerConfigRef:
     name: gcp-provider-config
