@@ -33,6 +33,8 @@ metadata:
   name: management
   namespace: argocd
 spec:
+  goTemplate: true
+  goTemplateOptions: [ "missingkey=error" ]
   generators:
   - git:
       directories:
@@ -40,18 +42,6 @@ spec:
       repoURL: https://github.com/Map/gitops_rendered.git
       requeueAfterSeconds: 20
       revision: ""
-      template:
-        metadata: {}
-        spec:
-          destination: {}
-          project: ""
-          source:
-            directory:
-              exclude: '{{ exclude }}'
-              include: '{{ include }}'
-              jsonnet: {}
-              recurse: true
-            repoURL: ""
   syncPolicy: {}
   template:
     metadata:

@@ -2,7 +2,6 @@ apiVersion: argoproj.io/v1alpha1
 kind: AppProject
 metadata:
   annotations:
-    argocd-autopilot.argoproj-labs.io/default-dest-server: https://35.205.52.239
     argocd.argoproj.io/sync-options: PruneLast=true
     argocd.argoproj.io/sync-wave: "-2"
   creationTimestamp: null
@@ -33,6 +32,8 @@ metadata:
   name: prod
   namespace: argocd
 spec:
+  goTemplate: true
+  goTemplateOptions: [ "missingkey=error" ]
   generators:
   - git:
       directories:
@@ -40,18 +41,6 @@ spec:
       repoURL: https://github.com/Map/gitops_rendered.git
       requeueAfterSeconds: 20
       revision: ""
-      template:
-        metadata: {}
-        spec:
-          destination: {}
-          project: ""
-          source:
-            directory:
-              exclude: '{{ exclude }}'
-              include: '{{ include }}'
-              jsonnet: {}
-              recurse: true
-            repoURL: ""
   syncPolicy: {}
   template:
     metadata:
