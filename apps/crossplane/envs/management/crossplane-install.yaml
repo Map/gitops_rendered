@@ -6,7 +6,6 @@ metadata:
   annotations:
     argocd.argoproj.io/sync-wave: "0"
 spec:
-  project: default
   source:
     repoURL: "https://charts.crossplane.io/stable"
     chart: "crossplane"
