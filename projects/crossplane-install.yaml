@@ -4,8 +4,9 @@ metadata:
   name: crossplane-install
   namespace: argocd
   annotations:
-    argocd.argoproj.io/sync-wave: "-1"
+    argocd.argoproj.io/sync-wave: "8"
 spec:
+  project: default
   source:
     repoURL: "https://charts.crossplane.io/stable"
     chart: "crossplane"
@@ -20,4 +21,11 @@ spec:
   syncPolicy:
     automated:
       prune: true
-      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
+    retry:
+      limit: 1
+      backoff:
+        duration: 5s
+        factor: 2
+        maxDuration: 1m
