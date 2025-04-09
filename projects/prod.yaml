@@ -57,7 +57,7 @@ spec:
     metadata:
       labels:
         app.kubernetes.io/managed-by: argocd-autopilot
-      name: '{{.path.basename}}'
+      name: "{{.path.basename}}"
       namespace: argocd
     spec:
       destination:
