@@ -15,6 +15,15 @@ spec:
     deletionProtection: false
   providerConfigRef:
     name: gcp-provider-config
+  publishConnectionDetailsTo:
+    name: gke-connection
+    metadata:
+      labels:
+        environment: dev
+      annotations:
+        acme.example.io/secret-type: infrastructure
+    configRef:
+      name: default
 
 ---
 

@@ -44,3 +44,12 @@ spec:
       - europe-west1-b
   providerConfigRef:
     name: gcp-provider-config
+  publishConnectionDetailsTo:
+    name: gke-connection
+    metadata:
+      labels:
+        environment: prod
+      annotations:
+        acme.example.io/secret-type: infrastructure
+    configRef:
+      name: default
