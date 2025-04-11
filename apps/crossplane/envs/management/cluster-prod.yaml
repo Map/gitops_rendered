@@ -18,7 +18,7 @@ spec:
   providerConfigRef:
     name: gcp-provider-config
   writeConnectionSecretToRef:
-    name: gcp-secret
+    name: new-secret
     namespace: crossplane-system
 ---
 
