@@ -16,12 +16,8 @@ spec:
   providerConfigRef:
     name: gcp-provider-config
   publishConnectionDetailsTo:
-    name: gke-connection
+    name: gcp-secret
     metadata:
-      labels:
-        environment: dev
-      annotations:
-        acme.example.io/secret-type: infrastructure
     configRef:
       name: default
 

@@ -15,7 +15,10 @@ spec:
     deletionProtection: false
   providerConfigRef:
     name: gcp-provider-config
-
+  publishConnectionDetailsTo:
+    name: gcp-secret
+    configRef:
+      name: crossplane-system
 ---
 
 apiVersion: container.gcp.upbound.io/v1beta2
@@ -44,12 +47,3 @@ spec:
       - europe-west1-b
   providerConfigRef:
     name: gcp-provider-config
-  publishConnectionDetailsTo:
-    name: gke-connection
-    metadata:
-      labels:
-        environment: prod
-      annotations:
-        acme.example.io/secret-type: infrastructure
-    configRef:
-      name: default
