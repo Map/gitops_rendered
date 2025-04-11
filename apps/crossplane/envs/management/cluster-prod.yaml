@@ -19,8 +19,6 @@ spec:
     name: gcp-provider-config
   publishConnectionDetailsTo:
     name: gcp-secret
-    configRef:
-      name: crossplane-system
 ---
 
 apiVersion: container.gcp.upbound.io/v1beta2
