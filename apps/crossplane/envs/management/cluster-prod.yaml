@@ -17,8 +17,9 @@ spec:
     monitoringService: monitoring.googleapis.com/kubernetes
   providerConfigRef:
     name: gcp-provider-config
-  publishConnectionDetailsTo:
+  writeConnectionSecretToRef:
     name: gcp-secret
+    namespace: crossplane-system
 ---
 
 apiVersion: container.gcp.upbound.io/v1beta2
