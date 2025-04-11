@@ -13,6 +13,8 @@ spec:
     initialNodeCount: 1
     removeDefaultNodePool: true
     deletionProtection: false
+    loggingService: logging.googleapis.com/kubernetes
+    monitoringService: monitoring.googleapis.com/kubernetes
   providerConfigRef:
     name: gcp-provider-config
   publishConnectionDetailsTo:
