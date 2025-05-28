@@ -51,7 +51,7 @@ spec:
     spec:
       destination:
         namespace: 'default'
-        server: 'https://34.79.232.113'
+        server: 'https://34.78.157.84'
       ignoreDifferences:
       - group: argoproj.io
         jsonPointers:

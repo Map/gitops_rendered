@@ -146,7 +146,8 @@ configMapGenerator:
       url: https://github.com/
       usernameSecret:
         key: git_username
-        name: autopilot-secret
+        name: map
+
   name: argocd-cm
 kind: Kustomization
 namespace: argocd
