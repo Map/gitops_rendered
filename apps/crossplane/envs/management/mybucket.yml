@@ -1,14 +1,14 @@
-apiVersion: storage.gcp.upbound.io/v1beta2
-kind: Bucket
-metadata:
-  annotations:
-    meta.upbound.io/example-id: storage/v1beta2/bucketobject
-  labels:
-    testing.upbound.io/example-name: bucket-object
-  name: bucket-object-random
-
-spec:
-  forProvider:
-    location: europe-west1
-  providerConfigRef:
-    name: gcp-provider-config
+#apiVersion: storage.gcp.upbound.io/v1beta2
+#kind: Bucket
+#metadata:
+#  annotations:
+#    meta.upbound.io/example-id: storage/v1beta2/bucketobject
+#  labels:
+#    testing.upbound.io/example-name: bucket-object
+#  name: bucket-object-random
+#
+#spec:
+#  forProvider:
+#    location: europe-west1
+#  providerConfigRef:
+#    name: gcp-provider-config
