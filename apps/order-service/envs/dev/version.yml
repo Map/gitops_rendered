@@ -2,10 +2,10 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginx-deployment
+  name: order-service-deployment
 spec:
   template:
     spec:
       containers:
-      - name: nginx
-        image: nginx:1.14.1
+      - name: order-service
+        image: eu.gcr.io/rhenus-hackathon/argo-dc/order-service:main
