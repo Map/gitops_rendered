@@ -8,4 +8,4 @@ spec:
     spec:
       containers:
       - name: order-service
-        image: eu.gcr.io/rhenus-hackathon/argo-dc/order-service:main
+        image: eu.gcr.io/rhenus-hackathon/argo-dc/order-service:1.0.0
