@@ -10,3 +10,5 @@ metadata:
 spec:
   forProvider:
     location: europe-west1
+  providerConfigRef:
+    name: gcp-provider-config
